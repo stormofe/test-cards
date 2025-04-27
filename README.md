@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Test Project "Асинхронные карточки" / Asynchronous Cards
 
-## Getting Started
+---
 
-First, run the development server:
+## English
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Project Overview
+This is a Next.js (App Router) TypeScript project implementing an asynchronous cards page. It fetches data from a delayed API, handles loading, success, and error states, and renders up to 7 cards with graceful fallbacks and performance optimizations.
+
+### Architecture
+```
+/app
+  ├─ layout.tsx           # Root layout (HTML, body wrapper)
+  └─ cards
+      ├─ layout.tsx       # Nested layout for /cards (Header/Footer wrapper)
+      └─ page.tsx         # CardsPage: UI rendering and error handling
+
+/components
+	└─ Layout.tsx           # Header/Footer wrapper using Button
+
+/ui
+  ├─ Button.tsx           # Reusable button with loading & disabled states
+  ├─ Card.tsx             # Card component (title + text)
+  └─ SkeletonCard.tsx     # Placeholder loader component
+
+/hooks
+  └─ useCards.ts          # Custom hook: fetch, sort, fill, and manage state
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js App Router** for file-based routing and nested layouts
+- **TypeScript** for type safety
+- **Tailwind CSS** for utility-first styling
+- **Axios** for HTTP requests with cancellation support
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation & Running
+1. **Clone repository**
+   ```bash
+   git clone <repo-url>
+   cd <repo-folder>
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+3. **Initialize TailwindCSS** (if not already generated)
+   ```bash
+   npx tailwindcss init -p
+   ```
+4. **Start development server**
+   ```bash
+   npm run dev
+   ```
+5. **Open in browser**
+   Navigate to `http://localhost:3000` (redirects to `/cards`)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### API Endpoint
+- `https://node-test-server-production.up.railway.app/api/cards`
+  - Simulates 10–20s delay
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Русский
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Описание проекта
+Это проект на Next.js (App Router) с TypeScript, реализующий страницу «Асинхронные карточки». Данные загружаются с API с задержкой, обрабатываются состояния загрузки, успеха и ошибки, отображаются до 7 карточек с заголовком и текстом.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Архитектура
+```
+/app
+  ├─ layout.tsx           # Главный layout (HTML, body)
+  └─ cards
+      ├─ layout.tsx       # Layout для /cards (шапка и подвал)
+      └─ page.tsx         # CardsPage: отрисовка карточек и обработка ошибок
 
-## Deploy on Vercel
+/components
+  └─ Layout.tsx           # Компонент-обёртка с Header и Footer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+/ui
+	├─ Button.tsx           # Универсальная кнопка с индикатором загрузки и блокировкой
+	├─ Card.tsx             # Компонент карточки (заголовок + текст)
+	└─ SkeletonCard.tsx     # Скелетон-карточка для состояния загрузки
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+/hooks
+  └─ useCards.ts          # Кастомный хук для загрузки, сортировки, заполнения и управления состоянием
+```
+
+- **Next.js App Router** для вложенных layout и маршрутизации
+- **TypeScript** для типизации
+- **Tailwind CSS** для стилизации
+- **Axios** для HTTP-запросов с поддержкой отмены
+
+### Установка и запуск
+1. **Клонировать репозиторий**
+   ```bash
+   git clone <repo-url>
+   cd <repo-folder>
+   ```
+2. **Установить зависимости**
+   ```bash
+   npm install
+   # или
+   yarn install
+   ```
+3. **Инициализировать TailwindCSS** (если ещё не создано)
+   ```bash
+   npx tailwindcss init -p
+   ```
+4. **Запустить dev-сервер**
+   ```bash
+   npm run dev
+   ```
+5. **Открыть в браузере**
+   Перейдите по адресу `http://localhost:3000` (будет перенаправление на `/cards`)
+
+### API Endpoint
+- `https://node-test-server-production.up.railway.app/api/cards`
+  - Симулирует задержку ответа 10–20 секунд
+
