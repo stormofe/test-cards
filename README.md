@@ -48,15 +48,11 @@ This is a Next.js (App Router) TypeScript project implementing an asynchronous c
    # or
    yarn install
    ```
-3. **Initialize TailwindCSS** (if not already generated)
-   ```bash
-   npx tailwindcss init -p
-   ```
-4. **Start development server**
+3. **Start development server**
    ```bash
    npm run dev
    ```
-5. **Open in browser**
+4. **Open in browser**
    Navigate to `http://localhost:3000` (redirects to `/cards`)
 
 ### API Endpoint
@@ -111,15 +107,11 @@ This is a Next.js (App Router) TypeScript project implementing an asynchronous c
    # или
    yarn install
    ```
-3. **Инициализировать TailwindCSS** (если ещё не создано)
-   ```bash
-   npx tailwindcss init -p
-   ```
-4. **Запустить dev-сервер**
+3. **Запустить dev-сервер**
    ```bash
    npm run dev
    ```
-5. **Открыть в браузере**
+4. **Открыть в браузере**
    Перейдите по адресу `http://localhost:3000` (будет перенаправление на `/cards`)
 
 ### API Endpoint
