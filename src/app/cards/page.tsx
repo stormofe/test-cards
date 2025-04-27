@@ -1,8 +1,7 @@
-import CardsLayout from './layout';
+import ClientPage from './ClientPage';
 
 export default function CardsPage() {
-
 	return (
-		<CardsLayout />
+		<ClientPage />
 	)
 }

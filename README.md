@@ -13,7 +13,6 @@ This is a Next.js (App Router) TypeScript project implementing an asynchronous c
   ├─ layout.tsx           # Root layout (HTML, body wrapper)
   └─ cards
 			├─ ClientPage.tsx   # CardsPage: UI rendering and error handling
-      ├─ layout.tsx       # Nested layout for /cards (Header/Footer wrapper)
       └─ page.tsx         # CardsPage: SSR rendering include ClientPage
 
 /components
@@ -72,7 +71,6 @@ This is a Next.js (App Router) TypeScript project implementing an asynchronous c
   ├─ layout.tsx           # Главный layout (HTML, body)
   └─ cards
 			├─ ClientPage.tsx   # Отрисовка карточек и обработка ошибок
-      ├─ layout.tsx       # Layout для /cards (шапка и подвал)
       └─ page.tsx         # CardsPage: SSR-обёртка для клиентского ClientPage
 
 /components

@@ -14,7 +14,7 @@ export default function Button({ onClick, disabled = false, loading = false, chi
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`px-4 py-2 rounded flex items-center justify-center ${
+      className={`button px-4 py-2 rounded flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-900 ${
         disabled
           ? 'bg-gray-400 cursor-not-allowed'
           : 'bg-blue-500 hover:bg-blue-600 text-white'
