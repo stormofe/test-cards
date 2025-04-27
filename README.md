@@ -12,8 +12,9 @@ This is a Next.js (App Router) TypeScript project implementing an asynchronous c
 /app
   ├─ layout.tsx           # Root layout (HTML, body wrapper)
   └─ cards
+			├─ ClientPage.tsx   # CardsPage: UI rendering and error handling
       ├─ layout.tsx       # Nested layout for /cards (Header/Footer wrapper)
-      └─ page.tsx         # CardsPage: UI rendering and error handling
+      └─ page.tsx         # CardsPage: SSR rendering include ClientPage
 
 /components
 	└─ Layout.tsx           # Header/Footer wrapper using Button
@@ -24,7 +25,10 @@ This is a Next.js (App Router) TypeScript project implementing an asynchronous c
   └─ SkeletonCard.tsx     # Placeholder loader component
 
 /hooks
-  └─ useCards.ts          # Custom hook: fetch, sort, fill, and manage state
+  └─ useCards.ts          # Custom hook: fetch, fill, and manage state
+
+/utils
+  └─ sortCards.ts         # Custom util: sort by title & text
 ```
 
 - **Next.js App Router** for file-based routing and nested layouts
@@ -71,8 +75,9 @@ This is a Next.js (App Router) TypeScript project implementing an asynchronous c
 /app
   ├─ layout.tsx           # Главный layout (HTML, body)
   └─ cards
+			├─ ClientPage.tsx   # Отрисовка карточек и обработка ошибок
       ├─ layout.tsx       # Layout для /cards (шапка и подвал)
-      └─ page.tsx         # CardsPage: отрисовка карточек и обработка ошибок
+      └─ page.tsx         # CardsPage: SSR-обёртка для клиентского ClientPage
 
 /components
   └─ Layout.tsx           # Компонент-обёртка с Header и Footer
@@ -84,6 +89,9 @@ This is a Next.js (App Router) TypeScript project implementing an asynchronous c
 
 /hooks
   └─ useCards.ts          # Кастомный хук для загрузки, сортировки, заполнения и управления состоянием
+
+/utils
+  └─ sortCards.ts         # Кастомная утилита для сортировки по тайтлу и тексту
 ```
 
 - **Next.js App Router** для вложенных layout и маршрутизации
